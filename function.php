@@ -1,6 +1,6 @@
 <head>
 	<title>Function</title>
-	<body style="background-image: url(img/headbanger.png);background-repeat: no-repeat; background-position: 100% 115%; background-size: 400px; margin-bottom: 150px; background-attachment: fixed">
+	<body style="background-image: url(img/headbanger.png);background-repeat: no-repeat; background-position: 100% 115%; background-size: 400px; background-attachment: fixed">
 		<h1 style="color: green">Jawaban Soal Function</h1>
 	<hr>
 	<ol>
@@ -55,7 +55,7 @@
 	<?php
 		function vowel($kalimat){
 			return substr_count($kalimat, "a") + substr_count($kalimat, "i") + substr_count($kalimat, "u") + substr_count($kalimat, "e") + substr_count($kalimat, "o");
-		} 	echo vowel("Kucing itu berlarian dikejar tikus");
+		} 	echo "Jumlah huruf vokal dari kalimat kucing itu berlarian dikejar tikus adalah : ". vowel("Kucing itu berlarian dikejar tikus");
 	?>
 	<br>
 	<br>
@@ -72,7 +72,18 @@
 	
 	<h3 style="color: red">Function 6</h3>
 	<?php
-
+		function nilaiinvestasi ($jumlah, $rate, $tahun){
+			return $jumlah * pow(1+($rate/12), $tahun *12); 
+		}
+		$spasi = str_repeat("&nbsp", 10);
+		$jumlah = 1000;
+		$rate = 10;
+		$tahun = 5;
+		$rate *= 0.01;
+		echo "Years". $spasi. "Future". $spasi. "Value <br>";
+		for ($x=1; $x < $tahun ; $x++) { 
+			echo $x. $spasi. $spasi. nilaiinvestasi($jumlah, $rate, $x). "<br/>";
+		}
 	?>
 	<br>
 	<br>
