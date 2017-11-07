@@ -77,7 +77,7 @@
 	<br>
 	<br>
 	
-	<h3">Function 7</h3>
+	<h3>Function 7</h3>
 	<?php
 		function ascii($a, $b, $c){
 			for ($x=1; $a <= $b ; $x++, $a++) { 
