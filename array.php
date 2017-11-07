@@ -1,7 +1,7 @@
   <head>
     <title>Array</title>
   </head>
-  <body style="background-image: url(img/headbanger.png);background-repeat: no-repeat; background-position: right bottom; background-size: 600px; margin-bottom: 150px">
+  <body style="background-image: url(img/headbanger.png);background-repeat: no-repeat; background-position: 100% 115%; background-size: 400px; background-attachment: fixed">
   	<h1 style="color: green">Jawaban Soal "array_ex.docx"</h1>
     <hr>
   	<ol>
@@ -17,11 +17,20 @@
       <br>
       <br>
 
-      <h3 style="color: red">Array 2</h3>
+      <h3>Array 2</h3>
       <?php
         $color = array('white', 'green', 'red');
-          echo $color[0]. " ". $color[1]. " ". $color[2];
-          echo '<ul>'.'<li>'. $color[1]. '</li>'. '<li>'. $color[2]. '</li>'. '<li>'. $color[0]. '</li>'. '</ul>';
+        for ($x=0; $x < count($color); $x++) { 
+          echo $color[$x]. " ";
+        }
+        for ($y=0; $y < count($color); $y++) { 
+          $a = $y + 1;
+          echo "<ul> <li> $color[$a] </li> </ul>";
+            if ($a==2) {
+              echo "<ul> <li> $color[0] </li> </ul>";
+              break;
+            }
+        }
       ?>
       <br>
       <br>
@@ -36,8 +45,10 @@
           "United Kingdom"=>"London", "Cyprus"=>"Nicosia", "Lithuania"=>"Vilnius",
           "Czech Republic"=>"Prague", "Estonia"=>"Tallin", "Hungary"=>"Budapest",
           "Latvia"=>"Riga", "Malta"=>"Valetta", "Austria" => "Vienna", "Poland"=>"Warsaw");
-          echo "The capital of Netherlands is ". $ceu["Netherlands"]. '<br>'.
-          "The capital of Greece is ". $ceu["Greece"]. '<br>'. "The capital of Germany is ". "The capital of Germany is ". $ceu["Germany"]. '<br>';
+          asort($ceu);
+          foreach ($ceu as $key => $value) {
+            echo "The capital of $key is $value". "<br>";
+          }
       ?>
       <br>
       <br>
@@ -121,7 +132,7 @@
               $test[$key] = strtoupper($value);
             }
         } return $test;
-}
+      }
       $color = array("A" => 'Blue', "B" => 'Green', "C" => 'Red');
       echo "Values are in lower case : ". "<br>";
       print_r(huruf($color, 'lowercase'));
